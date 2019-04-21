@@ -10,7 +10,7 @@ from twisted.enterprise import adbapi
 from scrapy.xlib.pydispatch import dispatcher
 from scrapy import signals
 from scrapy.utils.project import get_project_settings
-from scrapy import log
+
 
 SETTINGS = get_project_settings()
 
@@ -79,6 +79,7 @@ class MySQLPipeline(object):
         sql = "INSERT INTO jd_goods VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % \
               (ID, name, comment_num, shop_name, link, commentVersion, score1count, score2count, score3count,
                score4count, score5count, price)
+        print(sql)
         tx.execute(sql)
         print("yes")
 

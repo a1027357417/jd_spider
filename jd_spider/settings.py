@@ -54,7 +54,7 @@ COOKIES_ENABLED = False
 #     'jd_spider.middlewares.ProxyMiddleware': 100,
 # }
 
-DOWNLOAD_DELAY = 5# 下载延迟
+DOWNLOAD_DELAY = 2# 下载延迟
 
 LOG_LEVEL = 'INFO'
 
@@ -69,3 +69,12 @@ ITEM_PIPELINES = {
     'jd_spider.pipelines.MySQLPipeline': 300,  # 抓取商品信息时，使用该通道
     # 'jd_spider.pipelines.CommentPipeline': 300,  # 抓取评论信息时，使用该通道
 }
+DOWNLOAD_HANDLERS_BASE = {
+    'file': 'scrapy.core.downloader.handlers.file.FileDownloadHandler',
+    'http': 'scrapy.core.downloader.handlers.http.HttpDownloadHandler',
+    'https': 'scrapy.core.downloader.handlers.http.HttpDownloadHandler',
+    's3': 'scrapy.core.downloader.handlers.s3.S3DownloadHandler',
+}
+# DOWNLOAD_HANDLERS = {
+#     'https': 'zhiyi.custom.downloader.handler.https.HttpsDownloaderIgnoreCNError',
+# }

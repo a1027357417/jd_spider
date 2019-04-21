@@ -8,7 +8,7 @@ import xlrd
 class comment_spider(Spider):
     name = "comment"
     xlrd.Book.encoding = "utf-8"
-    data = xlrd.open_workbook(r"F:\app\jd_spider\goods.xls")
+    data = xlrd.open_workbook(r"F:\github\jd\goods.xls")
     # goods为要抓取评论的商品信息，现提供一个goods.xls文件供参考,第1列：商品ID；第2列：商品评论数；第3列：商品的commentVersion
     # test.xlsx也可以使用
     table = data.sheets()[0]
